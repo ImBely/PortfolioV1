@@ -1,0 +1,210 @@
+:root {
+    --neutral:#fffffe;
+    --base-100: #181818;
+    --neutral-focus: #181818;
+    --primary: #4fc4cf;
+    --accent: #fffffe;
+    --secondary: #2e2e2e;
+}
+
+* {
+    margin: 0; /*para ajustar toda lapgina, que no queden espaciecitos por ejemplo en el nav bar*/
+    scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: "Noto Serif", sans-serif;
+    text-align: center;
+    background-color: var(--neutral);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 60px;
+}
+#navbar {
+    display: flex;
+    justify-content: center; /*Con el justify content centramos o desplazamos las palabras de nuestro nav bar*/
+    position: fixed; /*para que se qeude fijo y al scroll no se mueva*/
+    top: 0; /*significa que estás colocando el elemento en la parte superior de su elemento contenedor*/
+    width: 100%;
+    background-color: var(--neutral);
+    padding: 20px 0;
+    font-size: 20px;
+    border-bottom: 1px solid var(--neutral-focus);
+}
+
+
+.nav-links {
+    display: flex; /*Con esto si se convierte en una sola linea las palabras del nav bar*/
+    list-style: none; /* para eliminar los punticos de lista*/
+}
+
+.nav-links a {
+    text-decoration: none; /*quita lo subrayado*/
+    color:var(--base-100);
+    padding: 0 10px;
+}
+
+.nav-links a:hover{ /*El hover es para cuando apuntas el cursor del mouse en esa parte va a reaccionar de acuerdo a la propiedad que establezcamos de aqui en adelante*/
+    text-decoration: underline;
+}
+
+section {
+    min-height: 100vh; /*Nos hace scrollear, hace que la altura de la pantalla sea de 100 y  como es grande se puede scrollear debido a ello*/
+    padding: 90px 0; /*Para que aparezca el texto ya que estaba en una capa oculta, con esto lo movemos hasta hacerlo visible y posicionarlo donde querramos*/
+}
+
+#welcome-section{
+    background-color: var(--neutral);
+    color: var(--base-100);
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-section h1{
+    margin-top: 30vh; /*Esta propiedad hace que haya un espacio entre el nav bar y el H1*/
+}
+
+#welcome-section p{
+    color: var(--primary);
+    font-size: 25px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+#projects {
+    background-color: var(--primary);
+    color: var(--neutral);
+}
+#projects h1 {
+    border-bottom: 5px solid var(--neutral-focus); /*Esto subraya ese titulo, divide la linea*/
+    width: fit-content;
+    margin: auto; /*Hay que colocarlo asi para que se ajuste este elemento o sino se vera muy grande*/
+}
+
+#projects .projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*  Esto hace que se dividan las columnas de acuerdo a las dimensioens qeu hayas colocado. El repeat para repetir ese patron de columna, el auto fit hace que se ajusten las columnas al contenedor. 
+    El minmax Especifica que cada columna debe tener una anchura mínima de 300 píxeles (300px) y una anchura máxima de una unidad de fracción (1fr).*/
+    gap: 30px;
+    padding: 20px;
+    place-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#projects .project-tile {
+    height: 525px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: var(--secondary);
+    text-decoration: none; /*Para quitar lo subrayado de la palabra*/
+    color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 8px 8px 10px 5px rgba(100, 100, 100, 0.3); /*El 5 es lo extendido de la sombra mientras mas alto el valor mas se ve*/
+}
+
+#projects .project-tile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#projects .project-tile p{
+    font-size: 25px;
+    padding: 10px;
+}
+
+#projects .project-tile span{
+    opacity: 0%; /*Esto es para que desaparezca el codiguito ese que se pone en el spam*/
+    padding: 0 5px; 
+}
+
+#projects .project-tile:hover span{
+    opacity: 100%;
+    color: var(--primary);
+    transition: opacity 0.25s ease-in;
+}
+
+.show-all {
+    text-decoration: none;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0px 15px;
+    background-color: var(--neutral);
+    color: var(--primary);
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in; /*velocidad en la que aparece el cambio del background*/
+}
+
+.show-all:hover {  /*Para que al pasar el mouse encima cambie a las sig propiedades*/
+    background-color: var(--neutral-focus);
+    color:var(--neutral);
+}
+
+#contact{
+    background-color: var(--neutral);
+    color: var(--primary);
+}
+
+#contact h1 {
+    margin-top: 300px;
+}
+
+#contact .coffe-question{
+    color: var(--primary);
+    font-size: 25px;
+    font-style: italic;
+}
+
+#contact .social-medias{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#contact .social-media {
+    text-decoration: none;
+    color: var(--base-100);
+    transition: transform 0.2s ease-in;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    font-size: 22px;
+}
+
+#contact .social-media:hover{
+    transform: translateY(10px); /*Para que al mover el cursor por esa parte haga un efecto de movimiento*/
+}
+
+footer {
+    border-top: 3px solid var(--primary); /*crea la linea en el pie de la pag web*/
+    color: var(--base-100);
+    font-size: 25px;
+    padding: 30px;
+}
+
+@media only screen and (width < 700px) {
+    h1{
+        font-size: 50px;
+    }
+    #projects .project-tile {
+        height: 600px;
+        width: 100%;
+    }
+}
